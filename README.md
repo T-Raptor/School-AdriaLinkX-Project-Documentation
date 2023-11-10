@@ -16,3 +16,4 @@ Sysadmins can also access all the things customers have access to, with the addi
 * Schematics
     - [C4 diagramme](https://drive.google.com/file/d/1tHmtJyDFO1SI2c7M6m7GOIX2gIoo6Nie/view?usp=sharing)
     - [ERD](https://drive.google.com/file/d/1qkV1r8Wmj8jX55_oqFQlqmtL1hnkYIm2/view?usp=sharing)
+    - [Flowcharts](https://drive.google.com/file/d/1gvu2GgsfvbxntRoD1Q6s74Qnn05bheWq/view?usp=sharing)
