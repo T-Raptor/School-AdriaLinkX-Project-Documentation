@@ -128,6 +128,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/stations'
+  /api/tracks:
+    get:
+      description: Get present tracks
+      operationId: getTracks
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tracks'
+
 
 components:
   schemas:
@@ -181,4 +193,18 @@ components:
       type: array
       items:
         $ref: '#/components/schemas/station'
+    track:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 24
+        station1:
+          $ref: '#/components/schemas/station'
+        station2:
+          $ref: '#/components/schemas/station'
+    tracks:
+      type: array
+      items:
+        $ref: '#/components/schemas/track'
 
