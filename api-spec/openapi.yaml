@@ -128,6 +128,33 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/stations'
+  /api/reservations:
+    get:
+      description: Get reservations
+      operationId: getReservations
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/reservations'
+    post:
+      description: Create a reservation
+      operationId: createReservation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/reservation'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/reservation'
   /api/tracks:
     get:
       description: Get present tracks
@@ -139,7 +166,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/tracks'
-
 
 components:
   schemas:
@@ -207,4 +233,32 @@ components:
       type: array
       items:
         $ref: '#/components/schemas/track'
+    reservation:
+      type: object
+      properties:
+        company:
+          type: string
+          example: 'John'
+        periodStart:
+          type: string
+          format: date-time
+          example: '2022-05-08 14:30:00'
+        periodStop:
+          type: string
+          format: date-time
+          example: '2022-05-09 14:30:00'
+        route:
+          type: array
+          items:
+            type: integer
+            example: 89
+      required:
+        - company
+        - periodStart
+        - periodStop
+        - route
+    reservations:
+      type: array
+      items:
+        $ref: '#/components/schemas/reservation'
 
