@@ -238,7 +238,6 @@ components:
       properties:
         company:
           type: string
-          format: Name
           example: 'John'
         periodStart:
           type: string
