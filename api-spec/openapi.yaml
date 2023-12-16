@@ -303,6 +303,10 @@ components:
           minimum: -90
           maximum: 90
           example: 5
+      required:
+        - target
+        - moment
+        - subject
     events:
       type: array
       items:
