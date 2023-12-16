@@ -177,6 +177,33 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/events'
+      parameters:
+        - in: query
+          name: target
+          schema:
+            type: integer
+          description: Only display events with exact target
+          example: 5
+        - in: query
+          name: earliest
+          schema:
+            type: string
+            format: date-time
+          description: Only display events after earliest
+          example: '2022-05-09 14:30:00'
+        - in: query
+          name: latest
+          schema:
+            type: string
+            format: date-time
+          description: Only display events before latest
+          example: '2022-05-09 14:30:00'
+        - in: query
+          name: subject
+          schema:
+            type: string
+          description: Only display events with exact subject
+          example: 'MOVE'
 
 components:
   schemas:
