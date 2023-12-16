@@ -166,6 +166,44 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/tracks'
+  /api/events:
+    get:
+      description: Search through
+      operationId: searchEvents
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/events'
+      parameters:
+        - in: query
+          name: target
+          schema:
+            type: integer
+          description: Only display events with exact target
+          example: 5
+        - in: query
+          name: earliest
+          schema:
+            type: string
+            format: date-time
+          description: Only display events after earliest
+          example: '2022-05-09 14:30:00'
+        - in: query
+          name: latest
+          schema:
+            type: string
+            format: date-time
+          description: Only display events before latest
+          example: '2022-05-09 14:30:00'
+        - in: query
+          name: subject
+          schema:
+            type: string
+          description: Only display events with exact subject
+          example: 'MOVE'
 
 components:
   schemas:
@@ -261,4 +299,45 @@ components:
       type: array
       items:
         $ref: '#/components/schemas/reservation'
+    observable:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 2
+    event:
+      type: object
+      properties:
+        target:
+          $ref: '#/components/schemas/observable'
+        moment:
+          type: string
+          format: date-time
+          example: '2022-05-09 14:30:00'
+        subject:
+          type: string
+          example: MOVE
+        reason:
+          type: string
+          example: Snorlax on track
+        latitude:
+          type: number
+          minimum: -90
+          maximum: 90
+          example: 20
+        longitude:
+          type: number
+          minimum: -90
+          maximum: 90
+          example: 5
+      required:
+        - target
+        - moment
+        - subject
+    events:
+      type: array
+      items:
+        $ref: '#/components/schemas/event'
+        
+        
 
