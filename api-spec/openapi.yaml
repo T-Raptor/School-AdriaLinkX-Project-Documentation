@@ -168,7 +168,7 @@ paths:
                 $ref: '#/components/schemas/tracks'
   /api/events:
     get:
-      description: Search through
+      description: Search through events
       operationId: searchEvents
       responses:
         '200':
@@ -204,6 +204,16 @@ paths:
             type: string
           description: Only display events with exact subject
           example: 'MOVE'
+    post:
+      description: Push event
+      operationId: pushEvent
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/eventProposal'
 
 components:
   schemas:
@@ -338,6 +348,36 @@ components:
       type: array
       items:
         $ref: '#/components/schemas/event'
+    eventProposal:
+      type: object
+      properties:
+        target:
+          type: number
+          example: 1
+        moment:
+          type: string
+          format: date-time
+          example: '2022-05-09 14:30:00'
+        subject:
+          type: string
+          example: MOVE
+        reason:
+          type: string
+          example: Snorlax on track
+        latitude:
+          type: number
+          minimum: -90
+          maximum: 90
+          example: 20
+        longitude:
+          type: number
+          minimum: -90
+          maximum: 90
+          example: 5
+      required:
+        - target
+        - moment
+        - subject
         
         
 
