@@ -347,6 +347,7 @@ components:
           maximum: 90
           example: 5
       required:
+        - id
         - target
         - moment
         - subject
