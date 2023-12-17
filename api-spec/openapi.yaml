@@ -187,17 +187,17 @@ paths:
         - in: query
           name: earliest
           schema:
-            type: string
-            format: date-time
+            type: integer
+            format: int64
           description: Only display events after earliest
-          example: '2022-05-09T14:30:00Z'
+          example: 1652434809000
         - in: query
           name: latest
           schema:
-            type: string
-            format: date-time
+            type: integer
+            format: int64
           description: Only display events before latest
-          example: '2022-05-09T14:30:00Z'
+          example: 1652434809000
         - in: query
           name: subject
           schema:
@@ -327,7 +327,8 @@ components:
         target:
           $ref: '#/components/schemas/observable'
         moment:
-          type: number
+          type: integer
+          format: int64
           example: 1652434809000
         subject:
           type: string
@@ -360,9 +361,8 @@ components:
           type: number
           example: 1
         moment:
-          type: string
-          format: date-time
-          example: '2022-05-09T14:30:00Z'
+          type: number
+          example: 1652434809000
         subject:
           type: string
           example: MOVE
