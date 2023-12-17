@@ -147,7 +147,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/reservation'
+              $ref: '#/components/schemas/reservationProposal'
       responses:
         '201':
           description: Created
@@ -208,8 +208,8 @@ paths:
       description: Push event
       operationId: pushEvent
       responses:
-        '200':
-          description: OK
+        '201':
+          description: Created
           content:
             application/json:
               schema:
@@ -290,22 +290,22 @@ components:
     reservation:
       type: object
       properties:
+        id:
+          type: integer
+          example: 5
         company:
           type: string
           example: 'John'
         periodStart:
-          type: string
-          format: date-time
-          example: '2022-05-08T14:30:00Z'
+          type: integer
+          format: int64
+          example: 1652434809000
         periodStop:
-          type: string
-          format: date-time
-          example: '2022-05-09T14:30:00Z'
+          type: integer
+          format: int64
+          example: 1652634809000
         route:
-          type: array
-          items:
-            type: integer
-            example: 89
+          $ref: '#/components/schemas/tracks'
       required:
         - company
         - periodStart
@@ -347,6 +347,7 @@ components:
           maximum: 90
           example: 5
       required:
+        - id
         - target
         - moment
         - subject
@@ -383,6 +384,32 @@ components:
         - target
         - moment
         - subject
-        
+    reservationProposal:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 5
+        company:
+          type: string
+          example: 'John'
+        periodStart:
+          type: integer
+          format: int64
+          example: 1652434809000
+        periodStop:
+          type: integer
+          format: int64
+          example: 1652634809000
+        route:
+          type: array
+          items:
+            type: integer
+      required:
+        - id
+        - company
+        - periodStart
+        - periodStop
+        - route
         
 
