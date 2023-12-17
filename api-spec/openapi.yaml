@@ -213,7 +213,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/eventProposal'
+                $ref: '#/components/schemas/event'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/eventProposal'
 
 components:
   schemas:
@@ -357,7 +363,7 @@ components:
         moment:
           type: string
           format: date-time
-          example: '2022-05-09 14:30:00'
+          example: '2022-05-09T14:30:00Z'
         subject:
           type: string
           example: MOVE
