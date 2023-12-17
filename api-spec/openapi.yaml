@@ -147,7 +147,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/reservation'
+              $ref: '#/components/schemas/reservationProposal'
       responses:
         '201':
           description: Created
