@@ -387,9 +387,6 @@ components:
     reservationProposal:
       type: object
       properties:
-        id:
-          type: integer
-          example: 5
         company:
           type: string
           example: 'John'
@@ -406,7 +403,6 @@ components:
           items:
             type: integer
       required:
-        - id
         - company
         - periodStart
         - periodStop
