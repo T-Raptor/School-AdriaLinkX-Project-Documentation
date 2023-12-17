@@ -190,14 +190,14 @@ paths:
             type: string
             format: date-time
           description: Only display events after earliest
-          example: '2022-05-09 14:30:00'
+          example: '2022-05-09T14:30:00Z'
         - in: query
           name: latest
           schema:
             type: string
             format: date-time
           description: Only display events before latest
-          example: '2022-05-09 14:30:00'
+          example: '2022-05-09T14:30:00Z'
         - in: query
           name: subject
           schema:
@@ -296,11 +296,11 @@ components:
         periodStart:
           type: string
           format: date-time
-          example: '2022-05-08 14:30:00'
+          example: '2022-05-08T14:30:00Z'
         periodStop:
           type: string
           format: date-time
-          example: '2022-05-09 14:30:00'
+          example: '2022-05-09T14:30:00Z'
         route:
           type: array
           items:
@@ -327,9 +327,8 @@ components:
         target:
           $ref: '#/components/schemas/observable'
         moment:
-          type: string
-          format: date-time
-          example: '2022-05-09 14:30:00'
+          type: number
+          example: 1652434809000
         subject:
           type: string
           example: MOVE
