@@ -383,6 +383,32 @@ components:
         - target
         - moment
         - subject
-        
+    reservationProposal:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 5
+        company:
+          type: string
+          example: 'John'
+        periodStart:
+          type: integer
+          format: int64
+          example: 1652434809000
+        periodStop:
+          type: integer
+          format: int64
+          example: 1652634809000
+        route:
+          type: array
+          items:
+            type: integer
+      required:
+        - id
+        - company
+        - periodStart
+        - periodStop
+        - route
         
 
