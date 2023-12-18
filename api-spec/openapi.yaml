@@ -1,13 +1,13 @@
 openapi: 3.0.3
 info:
-  title: 'Adria Concept Title - Adria-12'
-  description: 'Description of the Adria API - Adria-12'
+  title: "Adria Concept Title - Adria-12"
+  description: "Description of the Adria API - Adria-12"
   version: 0.0.1
 servers:
   - url: https://project-2.ti.howest.be/2023-2024/group-12/
-    description: 'Public API'
+    description: "Public API"
   - url: http://localhost:8080/
-    description: 'Local API'
+    description: "Local API"
 paths:
   /api/quotes:
     post:
@@ -34,12 +34,12 @@ paths:
               type: string
               example: "If everybody minded their own business, the world would go around a great deal faster than it does."
       responses:
-        '201':
+        "201":
           description: Created
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/quote'
+                $ref: "#/components/schemas/quote"
   /api/quotes/{quoteId}:
     get:
       description: Get a nice quote
@@ -52,12 +52,12 @@ paths:
             type: integer
           description: The quote id
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/quote'
+                $ref: "#/components/schemas/quote"
               examples:
                 two infinite things:
                   value:
@@ -101,7 +101,7 @@ paths:
                   quote: "I hope that in this year to come, you make mistakes. Because if you are making mistakes... you're Doing Something."
                 description: Neil Gaiman is a genius.
       responses:
-        '200':
+        "200":
           description: Created
     delete:
       description: Delete nice quote
@@ -115,30 +115,30 @@ paths:
           description: The quote Id
           example: 55
       responses:
-        '200':
+        "200":
           description: Deleted
   /api/stations:
     get:
       description: Get present stations
       operationId: getStations
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/stations'
+                $ref: "#/components/schemas/stations"
   /api/reservations:
     get:
       description: Get reservations
       operationId: getReservations
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/reservations'
+                $ref: "#/components/schemas/reservations"
     post:
       description: Create a reservation
       operationId: createReservation
@@ -147,36 +147,36 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/reservationProposal'
+              $ref: "#/components/schemas/reservationProposal"
       responses:
-        '201':
+        "201":
           description: Created
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/reservation'
+                $ref: "#/components/schemas/reservation"
   /api/tracks:
     get:
       description: Get present tracks
       operationId: getTracks
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/tracks'
+                $ref: "#/components/schemas/tracks"
   /api/events:
     get:
       description: Search through events
       operationId: searchEvents
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/events'
+                $ref: "#/components/schemas/events"
       parameters:
         - in: query
           name: target
@@ -203,34 +203,34 @@ paths:
           schema:
             type: string
           description: Only display events with exact subject
-          example: 'MOVE'
+          example: "MOVE"
     post:
       description: Push event
       operationId: pushEvent
       responses:
-        '201':
+        "201":
           description: Created
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/event'
+                $ref: "#/components/schemas/event"
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/eventProposal'
+              $ref: "#/components/schemas/eventProposal"
   /api/notifications/unread:
     post:
       description: Pop unread notifications
       operationId: popUnreadNotifications
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/notification'
+                $ref: "#/components/schemas/notification"
       requestBody:
         required: true
         content:
@@ -293,7 +293,7 @@ components:
     stations:
       type: array
       items:
-        $ref: '#/components/schemas/station'
+        $ref: "#/components/schemas/station"
     track:
       type: object
       properties:
@@ -301,13 +301,13 @@ components:
           type: integer
           example: 24
         station1:
-          $ref: '#/components/schemas/station'
+          $ref: "#/components/schemas/station"
         station2:
-          $ref: '#/components/schemas/station'
+          $ref: "#/components/schemas/station"
     tracks:
       type: array
       items:
-        $ref: '#/components/schemas/track'
+        $ref: "#/components/schemas/track"
     reservation:
       type: object
       properties:
@@ -316,7 +316,7 @@ components:
           example: 5
         company:
           type: string
-          example: 'John'
+          example: "John"
         periodStart:
           type: integer
           format: int64
@@ -326,7 +326,7 @@ components:
           format: int64
           example: 1652634809000
         route:
-          $ref: '#/components/schemas/tracks'
+          $ref: "#/components/schemas/tracks"
       required:
         - company
         - periodStart
@@ -335,7 +335,7 @@ components:
     reservations:
       type: array
       items:
-        $ref: '#/components/schemas/reservation'
+        $ref: "#/components/schemas/reservation"
     observable:
       type: object
       properties:
@@ -346,7 +346,7 @@ components:
       type: object
       properties:
         target:
-          $ref: '#/components/schemas/observable'
+          $ref: "#/components/schemas/observable"
         moment:
           type: integer
           format: int64
@@ -375,7 +375,7 @@ components:
     events:
       type: array
       items:
-        $ref: '#/components/schemas/event'
+        $ref: "#/components/schemas/event"
     eventProposal:
       type: object
       properties:
@@ -410,7 +410,7 @@ components:
       properties:
         company:
           type: string
-          example: 'John'
+          example: "John"
         periodStart:
           type: integer
           format: int64
@@ -432,12 +432,10 @@ components:
       type: object
       properties:
         event:
-          $ref: '#/components/schemas/event'
+          $ref: "#/components/schemas/event"
         company:
           type: string
           example: Macrosoft
         read:
           type: boolean
           example: false
-        
-
