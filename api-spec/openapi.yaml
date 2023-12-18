@@ -136,23 +136,6 @@ paths:
 
 components:
   schemas:
-    quote:
-      type: object
-      properties:
-        value:
-          type: string
-          x-faker: lorem.sentence
-          example: "Life is a disease: sexually transmitted, and invariably fatal."
-        id:
-          type: integer
-          minimum: 1
-          example: 8
-      required:
-        - value
-        - id
-      example:
-        value: See, the problem is that God gives men a brain and a penis, and only enough blood to run one at a time.
-        id: 89
     station:
       type: object
       properties:
