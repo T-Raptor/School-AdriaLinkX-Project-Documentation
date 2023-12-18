@@ -220,6 +220,27 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/eventProposal'
+  /api/notifications/unread:
+    post:
+      description: Pop unread notifications
+      operationId: popUnreadNotifications
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/notification'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                company:
+                  type: string
+                  example: Macrosoft
 
 components:
   schemas:
@@ -407,5 +428,16 @@ components:
         - periodStart
         - periodStop
         - route
+    notification:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/event'
+        company:
+          type: string
+          example: Macrosoft
+        read:
+          type: boolean
+          example: false
         
 
