@@ -179,6 +179,11 @@ components:
         cause:
           type: string
           example: "[Bad Request] Parsing error for parameter earliest in location QUERY: java.lang.NumberFormatException: For input string: \"llama\""
+    angle:
+      type: number
+      minimum: -90
+      maximum: 90
+      example: 50.85
     station:
       type: object
       properties:
@@ -189,15 +194,9 @@ components:
           type: integer
           example: 8
         latitude:
-          type: number
-          minimum: -90
-          maximum: 90
-          example: 50.85292760248162
+          $ref: "#/components/schemas/angle"
         longitude:
-          type: number
-          minimum: -90
-          maximum: 90
-          example: 4.351725442466426
+          $ref: "#/components/schemas/angle"
       required:
         - name
         - id
@@ -266,15 +265,9 @@ components:
           type: string
           example: Snorlax on track
         latitude:
-          type: number
-          minimum: -90
-          maximum: 90
-          example: 20
+          $ref: "#/components/schemas/angle"
         longitude:
-          type: number
-          minimum: -90
-          maximum: 90
-          example: 5
+          $ref: "#/components/schemas/angle"
       required:
         - id
         - target
@@ -296,15 +289,9 @@ components:
           type: string
           example: Snorlax on track
         latitude:
-          type: number
-          minimum: -90
-          maximum: 90
-          example: 20
+          $ref: "#/components/schemas/angle"
         longitude:
-          type: number
-          minimum: -90
-          maximum: 90
-          example: 5
+          $ref: "#/components/schemas/angle"
       required:
         - target
         - moment
