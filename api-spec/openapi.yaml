@@ -11,7 +11,7 @@ servers:
 paths:
   /api/stations:
     get:
-      description: Get present stations
+      description: Get stations
       operationId: getStations
       responses:
         "200":
@@ -53,7 +53,7 @@ paths:
                 $ref: "#/components/schemas/reservation"
   /api/tracks:
     get:
-      description: Get present tracks
+      description: Get tracks
       operationId: getTracks
       responses:
         "200":
