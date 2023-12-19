@@ -235,6 +235,7 @@ components:
           items:
             $ref: "#/components/schemas/track"
       required:
+        - id
         - company
         - periodStart
         - periodStop
