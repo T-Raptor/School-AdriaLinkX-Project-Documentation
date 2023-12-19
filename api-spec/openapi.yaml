@@ -74,21 +74,6 @@ paths:
     get:
       description: Search through events
       operationId: searchEvents
-      responses:
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/event"
-        "400":
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/error"
       parameters:
         - in: query
           name: target
@@ -116,6 +101,21 @@ paths:
             type: string
           description: Only display events with exact subject
           example: MOVE
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/event"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
     post:
       description: Push event
       operationId: pushEvent
