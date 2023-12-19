@@ -184,12 +184,14 @@ components:
       type: integer
       format: int64
       example: 1652434809000
+    id:
+      type: integer
+      example: 1
     station:
       type: object
       properties:
         id:
-          type: integer
-          example: 8
+          $ref: "#/components/schemas/id"
         name:
           type: string
           example: Adria
@@ -204,15 +206,13 @@ components:
         - longitude
       example:
         name: Adria
-        id: 89
         latitude: 50.85292760248162
         longitude: 4.351725442466426
     track:
       type: object
       properties:
         id:
-          type: integer
-          example: 24
+          $ref: "#/components/schemas/id"
         station1:
           $ref: "#/components/schemas/station"
         station2:
@@ -221,8 +221,7 @@ components:
       type: object
       properties:
         id:
-          type: integer
-          example: 5
+          $ref: "#/components/schemas/id"
         company:
           type: string
           example: John
@@ -244,14 +243,12 @@ components:
       type: object
       properties:
         id:
-          type: integer
-          example: 2
+          $ref: "#/components/schemas/id"
     event:
       type: object
       properties:
         id:
-          type: integer
-          example: 1
+          $ref: "#/components/schemas/id"
         target:
           $ref: "#/components/schemas/observable"
         moment:
@@ -275,8 +272,7 @@ components:
       type: object
       properties:
         target:
-          type: number
-          example: 1
+          $ref: "#/components/schemas/id"
         moment:
           $ref: "#/components/schemas/timestamp"
         subject:
