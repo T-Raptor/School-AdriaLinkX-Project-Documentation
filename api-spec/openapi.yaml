@@ -51,6 +51,12 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/reservation"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
   /api/tracks:
     get:
       description: Get tracks
@@ -77,6 +83,12 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/event"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
       parameters:
         - in: query
           name: target
@@ -120,6 +132,12 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/event"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
   /api/notifications/unread:
     post:
       description: Pop unread notifications
@@ -143,9 +161,24 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/notification"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
 
 components:
   schemas:
+    error:
+      type: object
+      properties:
+        failure:
+          type: string
+          example: 400
+        cause:
+          type: string
+          example: "[Bad Request] Parsing error for parameter earliest in location QUERY: java.lang.NumberFormatException: For input string: \"llama\""
     station:
       type: object
       properties:
