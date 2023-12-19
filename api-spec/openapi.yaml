@@ -248,6 +248,9 @@ components:
     event:
       type: object
       properties:
+        id:
+          type: integer
+          example: 1
         target:
           $ref: "#/components/schemas/observable"
         moment:
