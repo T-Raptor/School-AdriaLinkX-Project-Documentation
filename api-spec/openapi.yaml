@@ -103,7 +103,7 @@ paths:
           schema:
             type: string
           description: Only display events with exact subject
-          example: "MOVE"
+          example: MOVE
     post:
       description: Push event
       operationId: pushEvent
