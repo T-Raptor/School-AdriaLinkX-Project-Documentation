@@ -19,7 +19,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/stations"
+                type: array
+                items:
+                  $ref: "#/components/schemas/station"
   /api/reservations:
     get:
       description: Get reservations
@@ -30,7 +32,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/reservations"
+                type: array
+                items:
+                  $ref: "#/components/schemas/reservation"
     post:
       description: Create a reservation
       operationId: createReservation
@@ -57,7 +61,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/tracks"
+                type: array
+                items:
+                  $ref: "#/components/schemas/track"
   /api/events:
     get:
       description: Search through events
@@ -68,7 +74,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/events"
+                type: array
+                items:
+                  $ref: "#/components/schemas/event"
       parameters:
         - in: query
           name: target
@@ -167,10 +175,6 @@ components:
         id: 89
         latitude: 50.85292760248162
         longitude: 4.351725442466426
-    stations:
-      type: array
-      items:
-        $ref: "#/components/schemas/station"
     track:
       type: object
       properties:
@@ -181,10 +185,6 @@ components:
           $ref: "#/components/schemas/station"
         station2:
           $ref: "#/components/schemas/station"
-    tracks:
-      type: array
-      items:
-        $ref: "#/components/schemas/track"
     reservation:
       type: object
       properties:
@@ -203,16 +203,14 @@ components:
           format: int64
           example: 1652634809000
         route:
-          $ref: "#/components/schemas/tracks"
+          type: array
+          items:
+            $ref: "#/components/schemas/track"
       required:
         - company
         - periodStart
         - periodStop
         - route
-    reservations:
-      type: array
-      items:
-        $ref: "#/components/schemas/reservation"
     observable:
       type: object
       properties:
@@ -249,10 +247,6 @@ components:
         - target
         - moment
         - subject
-    events:
-      type: array
-      items:
-        $ref: "#/components/schemas/event"
     eventProposal:
       type: object
       properties:
