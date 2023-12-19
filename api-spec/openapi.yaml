@@ -84,17 +84,13 @@ paths:
         - in: query
           name: earliest
           schema:
-            type: integer
-            format: int64
+            $ref: "#/components/schemas/timestamp"
           description: Only display events after earliest
-          example: 1652434809000
         - in: query
           name: latest
           schema:
-            type: integer
-            format: int64
+            $ref: "#/components/schemas/timestamp"
           description: Only display events before latest
-          example: 1652434809000
         - in: query
           name: subject
           schema:
@@ -184,6 +180,10 @@ components:
       minimum: -90
       maximum: 90
       example: 50.85
+    timestamp:
+      type: integer
+      format: int64
+      example: 1652434809000
     station:
       type: object
       properties:
@@ -227,13 +227,9 @@ components:
           type: string
           example: John
         periodStart:
-          type: integer
-          format: int64
-          example: 1652434809000
+          $ref: "#/components/schemas/timestamp"
         periodStop:
-          type: integer
-          format: int64
-          example: 1652634809000
+          $ref: "#/components/schemas/timestamp"
         route:
           type: array
           items:
@@ -255,9 +251,7 @@ components:
         target:
           $ref: "#/components/schemas/observable"
         moment:
-          type: integer
-          format: int64
-          example: 1652434809000
+          $ref: "#/components/schemas/timestamp"
         subject:
           type: string
           example: MOVE
@@ -280,8 +274,7 @@ components:
           type: number
           example: 1
         moment:
-          type: number
-          example: 1652434809000
+          $ref: "#/components/schemas/timestamp"
         subject:
           type: string
           example: MOVE
@@ -303,13 +296,9 @@ components:
           type: string
           example: John
         periodStart:
-          type: integer
-          format: int64
-          example: 1652434809000
+          $ref: "#/components/schemas/timestamp"
         periodStop:
-          type: integer
-          format: int64
-          example: 1652634809000
+          $ref: "#/components/schemas/timestamp"
         route:
           type: array
           items:
