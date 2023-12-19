@@ -107,6 +107,12 @@ paths:
     post:
       description: Push event
       operationId: pushEvent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/eventProposal"
       responses:
         "201":
           description: Created
@@ -114,25 +120,10 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/event"
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/eventProposal"
   /api/notifications/unread:
     post:
       description: Pop unread notifications
       operationId: popUnreadNotifications
-      responses:
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/notification"
       requestBody:
         required: true
         content:
@@ -143,6 +134,15 @@ paths:
                 company:
                   type: string
                   example: Macrosoft
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/notification"
 
 components:
   schemas:
