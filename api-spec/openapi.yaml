@@ -187,19 +187,19 @@ components:
     station:
       type: object
       properties:
-        name:
-          type: string
-          example: Adria
         id:
           type: integer
           example: 8
+        name:
+          type: string
+          example: Adria
         latitude:
           $ref: "#/components/schemas/angle"
         longitude:
           $ref: "#/components/schemas/angle"
       required:
-        - name
         - id
+        - name
         - latitude
         - longitude
       example:
