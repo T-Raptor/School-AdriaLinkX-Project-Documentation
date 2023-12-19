@@ -122,7 +122,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/notification"
+                type: array
+                items:
+                  $ref: "#/components/schemas/notification"
       requestBody:
         required: true
         content:
