@@ -11,7 +11,7 @@ servers:
 paths:
   /api/stations:
     get:
-      description: Get present stations
+      description: Get stations
       operationId: getStations
       responses:
         "200":
@@ -19,7 +19,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/stations"
+                type: array
+                items:
+                  $ref: "#/components/schemas/station"
   /api/reservations:
     get:
       description: Get reservations
@@ -30,7 +32,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/reservations"
+                type: array
+                items:
+                  $ref: "#/components/schemas/reservation"
     post:
       description: Create a reservation
       operationId: createReservation
@@ -47,9 +51,15 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/reservation"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
   /api/tracks:
     get:
-      description: Get present tracks
+      description: Get tracks
       operationId: getTracks
       responses:
         "200":
@@ -57,18 +67,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/tracks"
+                type: array
+                items:
+                  $ref: "#/components/schemas/track"
   /api/events:
     get:
       description: Search through events
       operationId: searchEvents
-      responses:
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/events"
       parameters:
         - in: query
           name: target
@@ -79,26 +84,43 @@ paths:
         - in: query
           name: earliest
           schema:
-            type: integer
-            format: int64
+            $ref: "#/components/schemas/timestamp"
           description: Only display events after earliest
-          example: 1652434809000
         - in: query
           name: latest
           schema:
-            type: integer
-            format: int64
+            $ref: "#/components/schemas/timestamp"
           description: Only display events before latest
-          example: 1652434809000
         - in: query
           name: subject
           schema:
             type: string
           description: Only display events with exact subject
-          example: "MOVE"
+          example: MOVE
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/event"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
     post:
       description: Push event
       operationId: pushEvent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/eventProposal"
       responses:
         "201":
           description: Created
@@ -106,23 +128,16 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/event"
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/eventProposal"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
   /api/notifications/unread:
     post:
       description: Pop unread notifications
       operationId: popUnreadNotifications
-      responses:
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/notification"
       requestBody:
         required: true
         content:
@@ -133,99 +148,144 @@ paths:
                 company:
                   type: string
                   example: Macrosoft
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/notification"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
+  /api/shuttles:
+    get:
+      description: Get registered shuttles
+      operationId: getShuttles
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/shuttle"
+    post:
+      description: Register a shuttle
+      operationId: registerShuttle
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/shuttleProposal"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/shuttle"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
 
 components:
   schemas:
-    station:
+    error:
       type: object
       properties:
-        name:
+        failure:
           type: string
-          example: "Adria"
-        id:
-          type: integer
-          example: 8
-        latitude:
-          type: number
-          minimum: -90
-          maximum: 90
-          example: 50.85292760248162
-        longitude:
-          type: number
-          minimum: -90
-          maximum: 90
-          example: 4.351725442466426
-      required:
-        - name
-        - id
-        - latitude
-        - longitude
-      example:
-        name: "Adria"
-        id: 89
-        latitude: 50.85292760248162
-        longitude: 4.351725442466426
-    stations:
-      type: array
-      items:
-        $ref: "#/components/schemas/station"
-    track:
-      type: object
-      properties:
-        id:
-          type: integer
-          example: 24
-        station1:
-          $ref: "#/components/schemas/station"
-        station2:
-          $ref: "#/components/schemas/station"
-    tracks:
-      type: array
-      items:
-        $ref: "#/components/schemas/track"
-    reservation:
-      type: object
-      properties:
-        id:
-          type: integer
-          example: 5
-        company:
+          example: 400
+        cause:
           type: string
-          example: "John"
-        periodStart:
-          type: integer
-          format: int64
-          example: 1652434809000
-        periodStop:
-          type: integer
-          format: int64
-          example: 1652634809000
-        route:
-          $ref: "#/components/schemas/tracks"
-      required:
-        - company
-        - periodStart
-        - periodStop
-        - route
-    reservations:
-      type: array
-      items:
-        $ref: "#/components/schemas/reservation"
+          example: "[Bad Request] Parsing error for parameter earliest in location QUERY: java.lang.NumberFormatException: For input string: \"llama\""
+    angle:
+      type: number
+      minimum: -90
+      maximum: 90
+      example: 50.85
+    timestamp:
+      type: integer
+      format: int64
+      example: 1652434809000
+    id:
+      type: integer
+      example: 1
     observable:
       type: object
       properties:
         id:
-          type: integer
-          example: 2
+          $ref: "#/components/schemas/id"
+      required:
+        - id
+    station:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/id"
+        name:
+          type: string
+          example: Adria
+        latitude:
+          $ref: "#/components/schemas/angle"
+        longitude:
+          $ref: "#/components/schemas/angle"
+      required:
+        - id
+        - name
+        - latitude
+        - longitude
+    track:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/id"
+        station1:
+          $ref: "#/components/schemas/station"
+        station2:
+          $ref: "#/components/schemas/station"
+    reservation:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/id"
+        company:
+          type: string
+          example: Macrosoft
+        periodStart:
+          $ref: "#/components/schemas/timestamp"
+        periodStop:
+          $ref: "#/components/schemas/timestamp"
+        route:
+          type: array
+          items:
+            $ref: "#/components/schemas/track"
+      required:
+        - id
+        - company
+        - periodStart
+        - periodStop
+        - route
     event:
       type: object
       properties:
+        id:
+          $ref: "#/components/schemas/id"
         target:
           $ref: "#/components/schemas/observable"
         moment:
-          type: integer
-          format: int64
-          example: 1652434809000
+          $ref: "#/components/schemas/timestamp"
         subject:
           type: string
           example: MOVE
@@ -233,76 +293,25 @@ components:
           type: string
           example: Snorlax on track
         latitude:
-          type: number
-          minimum: -90
-          maximum: 90
-          example: 20
+          $ref: "#/components/schemas/angle"
         longitude:
-          type: number
-          minimum: -90
-          maximum: 90
-          example: 5
+          $ref: "#/components/schemas/angle"
       required:
         - id
         - target
         - moment
         - subject
-    events:
-      type: array
-      items:
-        $ref: "#/components/schemas/event"
-    eventProposal:
+    shuttle:
       type: object
       properties:
-        target:
-          type: number
-          example: 1
-        moment:
-          type: number
-          example: 1652434809000
-        subject:
+        id:
+          $ref: "#/components/schemas/id"
+        serial:
           type: string
-          example: MOVE
-        reason:
-          type: string
-          example: Snorlax on track
-        latitude:
-          type: number
-          minimum: -90
-          maximum: 90
-          example: 20
-        longitude:
-          type: number
-          minimum: -90
-          maximum: 90
-          example: 5
+          example: AAA-47F-AF24
       required:
-        - target
-        - moment
-        - subject
-    reservationProposal:
-      type: object
-      properties:
-        company:
-          type: string
-          example: "John"
-        periodStart:
-          type: integer
-          format: int64
-          example: 1652434809000
-        periodStop:
-          type: integer
-          format: int64
-          example: 1652634809000
-        route:
-          type: array
-          items:
-            type: integer
-      required:
-        - company
-        - periodStart
-        - periodStop
-        - route
+        - id
+        - serial
     notification:
       type: object
       properties:
@@ -314,3 +323,55 @@ components:
         read:
           type: boolean
           example: false
+      required:
+        - event
+        - company
+        - read
+    eventProposal:
+      type: object
+      properties:
+        target:
+          $ref: "#/components/schemas/id"
+        moment:
+          $ref: "#/components/schemas/timestamp"
+        subject:
+          type: string
+          example: MOVE
+        reason:
+          type: string
+          example: Snorlax on track
+        latitude:
+          $ref: "#/components/schemas/angle"
+        longitude:
+          $ref: "#/components/schemas/angle"
+      required:
+        - target
+        - moment
+        - subject
+    reservationProposal:
+      type: object
+      properties:
+        company:
+          type: string
+          example: John
+        periodStart:
+          $ref: "#/components/schemas/timestamp"
+        periodStop:
+          $ref: "#/components/schemas/timestamp"
+        route:
+          type: array
+          items:
+            $ref: "#/components/schemas/id"
+      required:
+        - company
+        - periodStart
+        - periodStop
+        - route
+    shuttleProposal:
+      type: object
+      properties:
+        serial:
+          type: string
+          example: AAA-47F-AF24
+      required:
+        - serial
