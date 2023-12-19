@@ -163,6 +163,41 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/error"
+  /api/shuttles:
+    get:
+      description: Get registered shuttles
+      operationId: getShuttles
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/shuttle"
+    post:
+      description: Register a shuttle
+      operationId: registerShuttle
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/shuttleProposal"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/shuttle"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
 
 components:
   schemas:
@@ -266,6 +301,17 @@ components:
         - target
         - moment
         - subject
+    shuttle:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/id"
+        serial:
+          type: string
+          example: AAA-47F-AF24
+      required:
+        - id
+        - serial
     notification:
       type: object
       properties:
@@ -321,3 +367,11 @@ components:
         - periodStart
         - periodStop
         - route
+    shuttleProposal:
+      type: object
+      properties:
+        serial:
+          type: string
+          example: AAA-47F-AF24
+      required:
+        - serial
