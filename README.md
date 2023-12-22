@@ -12,14 +12,14 @@ Our mission with this project is to provide a solution to the problem of the lac
 
 ### Prerequisites
 
-Before starting, you have to check if your system meets the following requirements:
+To run the application locally, you need the following software installed on your machine:
 
 - Server
   - IntelliJ IDEA (Optional but recommended)
   - Azul Zulu JDK 17
 
 - Client
-  - nginx
+  - nginx (Installation instructions will be provided below)
 
 - Tracker
   - Python 3.x
