@@ -24,8 +24,7 @@ Before starting, you have to check if your system meets the following requiremen
   - nginx
 
 - Tracker
-  - Python (with pip)
-    - `requests` module
+  - Python 3.x
 
 ### Usage
 
@@ -35,13 +34,24 @@ The application comprises multiple webpages, each catering to a specific functio
 
 1. **Index**
    - The index page provides you with a dashboard of options to choose from. You can choose to monitor the shuttles, view the analytics, or view the reservations.
-2. **Shuttle Monitor**
-   - The shuttle monitor page allows you to view the current location of all shuttles. You can view the shuttle's route, current status.
+    ![Index screenshot](webapp-screenshots/index.png)
 
-#### Screenshots
+2. **Reserve**
+   - The reserve page allows you to reserve tracks. You can choose the date, time, and destination of your trip.
+    ![Reserve screenshot](webapp-screenshots/reserve.png)
+    *Note: In the screenshot a track, date and timeframe are selected just for demonstration purposes.*
 
-![Screenshot]()
-*Caption: caption*
+3. **Reservation**
+   - The reservation page allows you to reserve tracks. You can choose the date, time, and destination of your trip.
+    ![Reservation screenshot](webapp-screenshots/reservations.png)
+
+4. **Shuttle Monitor**
+   - The shuttle monitor page allows you to view the current location of all shuttles. You can view shuttle's current route and track's current status or using the history bar you can view older shuttles and tracks statuses.
+    ![Monitor screenshot](webapp-screenshots/monitor.png)
+
+5. **Analytics**
+   - The analytics page allows you to view the analytics of the system. You can view the number of reservations per month and the number of incidents per month.
+    ![Analytics screenshot](webapp-screenshots/analytics.png)
 
 ## Getting Started
 
@@ -55,7 +65,19 @@ To experience the live application, visit [the live application](https://project
 
 Set up and run the server locally by following these steps:
 
-1. Pull the repository: `git clone https://gitlab.ti.howest.be/ti/2023-2024/s3/analysis-and-development-project/projects/group-12/adria-server-12.git`
+- Pull the server repository into a folder of your choice: `git clone https://gitlab.ti.howest.be/ti/2023-2024/s3/analysis-and-development-project/projects/group-12/server.git`
+
+From here, you have two options:
+
+- Run the server using IntelliJ IDEA
+  1. Open the project in IntelliJ IDEA
+  2. Run the server from the IDE by executing the `run` task under `application` in the Gradle sidebar
+
+- Run the server via the command line
+  1. Open a terminal in the project directory
+  2. Run the server:
+     - Windows: `gradlew.bat run`
+     - Linux/MacOS: `./gradlew run`
 
 #### Running the Client
 
@@ -65,7 +87,18 @@ Set up and run the client locally by following these steps:
 
 #### Running the Tracker
 
-1. 3
+- Pull the tracker repository into a folder of your choice: `git clone https://gitlab.ti.howest.be/ti/2023-2024/s3/analysis-and-development-project/projects/group-12/tracker.git`
+
+Set up and run the tracker (shuttle & notice simulator) locally by following these steps:
+
+1. Open a terminal in the project directory
+2. Create a virtual environment: `python3 -m venv venv`
+3. Activate the virtual environment:
+   - Windows: `venv\Scripts\activate.bat`
+   - Linux/MacOS: `source venv/bin/activate`
+
+4. Install the required packages: `pip install -r requirements.txt`
+5. Run the tracker: `python tracker.py`
 
 ## Code Quality
 
@@ -76,7 +109,7 @@ We use SonarQube to monitor the quality of our code. Here you can find the links
 - [Client Deshboard](https://sonarqube.ti.howest.be/dashboard?id=2023.project-2%3Aadria-client-12)
 - [Server Dashboards](https://sonarqube.ti.howest.be/dashboard?id=2023.project-2%3Aadria-server-12)
 
-## Understanding the Documentation Repository
+## Understanding the Repositories
 
 ### Folder Structure
 
