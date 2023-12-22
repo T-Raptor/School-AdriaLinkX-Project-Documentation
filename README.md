@@ -243,6 +243,14 @@ Our market is hosted on WordPress. You can find the link to our website [here](h
 
 As required, we have conducted user tests. You can find the results of these tests [here](user-tests/user-tests.docx).
 
+### Flow tests
+
+Additionally, we have conducted flow tests for 3 different flows:
+
+1. [I am a new client and I want to reserve a track.](flow-tests/new_client.mp4)
+2. [I am an existing client and want to view my reservations.](flow-tests/client.mp4)
+3. [I am an admin and want to view the analytics.](flow-tests/admin.mp4)
+
 ## Meet the Team
 
 Discover the talented individuals behind the project:
