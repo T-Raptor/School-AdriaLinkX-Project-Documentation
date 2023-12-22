@@ -215,17 +215,23 @@ Refer to the [Business Case Document](https://docs.google.com/document/d/1KgKLgS
 
 ## Implemented Topics
 
-### Self-Study Topics
-
-During the development of this application, we covered the following self-study topics:
-
-- topic
-
 ### Class Taught Topics
 
 Integration of class-taught topics into our project includes:
 
-- topic
+- Graphs
+- Maps
+
+### Self-Study Topics
+
+During the development of this application, we covered the following self-study topics:
+
+- Use of higher order functions on the server:
+  - 
+
+- Push notifications (Notification API):
+  - Push notifications are used to notify the client when an incident occurs.
+    For example, when a track is blocked, the client will receive a notification.
 
 ## Meet the Team
 
