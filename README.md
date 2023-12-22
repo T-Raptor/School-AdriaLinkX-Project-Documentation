@@ -83,12 +83,11 @@ We use SonarQube to monitor the quality of our code. Here you can find the links
 The server, client and tracker repositories are structured as follows:
 
 - Server
-  - `docs/`: Documentation files
-  - `src/`: Source code
-  - `diagrams/`: Diagrams and visual assets
   - ...
 - Client
+  - ...
 - Tracker
+  - ...
 
 ### Technical Docs
 
