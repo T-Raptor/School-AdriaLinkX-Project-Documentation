@@ -79,11 +79,72 @@ From here, you have two options:
      - Windows: `gradlew.bat run`
      - Linux/MacOS: `./gradlew run`
 
+---
+
 #### Running the Client
 
 Set up and run the client locally by following these steps:
 
-1. 2
+The client is a static website, so you can run it using any web server. We recommend using nginx on Ubuntu/Debian or MacOS.
+
+*If you are using Windows, you can use the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/) to run Ubuntu/Debian*
+
+1. Change the current working directory to your user's home directory: `cd ~`
+2. Pull the client repository: `git clone https://gitlab.ti.howest.be/ti/2023-2024/s3/analysis-and-development-project/projects/group-12/client.git`
+3. For local hosting, you first need to confugure the `config.json`. Replace the contents from:
+
+   ```json
+   {
+    "host": "https://project-2.ti.howest.be",
+    "folder": "",
+    "year": "2023-2024",
+    "group": "group-12"
+   }
+   ```
+
+   to
+
+   ```json
+   {
+    "host": "http://localhost:8080",
+    "folder": "",
+    "year": "",
+    "group": ""
+   }
+   ```
+
+After pulling the repository the steps differ depending on your operating system:
+
+1. Install nginx if not yet installed:
+   - Ubuntu/Debian: `sudo apt install nginx`
+   - MacOS: `brew install nginx`
+
+2. Edit the nginx config file: `sudo nano /etc/nginx/conf.d/default.conf`
+     - Replace the contents of the file with the following:
+
+       ```nginx
+       server {
+           listen 80 default_server;
+
+           root /home/[YOUR_USERNAME]/client;
+           index index.html index.htm;
+
+           server_name localhost;
+
+           location / {
+               try_files $uri $uri/ =404;
+           }
+       }
+       ```
+
+3. Start nginx:
+
+   - Ubuntu/Debia: `sudo systemctl start nginx`
+   - MacOS: `sudo brew services start nginx`
+
+4. Open a browser and navigate to `localhost`
+
+---
 
 #### Running the Tracker
 
