@@ -15,9 +15,7 @@ Our mission with this project is to provide a solution to the problem of the lac
 Before starting, you have to check if your system meets the following requirements:
 
 - Server
-  - IntelliJ IDEA
-  - Azul Zulu JDK 17
-  - **OR**
+  - IntelliJ IDEA (Optional but recommended)
   - Azul Zulu JDK 17
 
 - Client
