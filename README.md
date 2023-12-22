@@ -232,6 +232,16 @@ During the development of this application, we covered the following self-study 
   - Push notifications are used to notify the client when an incident occurs.
     For example, when a track is blocked, the client will receive a notification.
 
+## Incomplete features
+
+### Dropped use cases
+- Performance or delay tracking of shuttles
+- Time availability indication
+
+### Known bugs
+- It is possible to double reserve a route
+- User is redirected even when reservation fails
+
 ## Additional Information
 
 ### Marketing Website
