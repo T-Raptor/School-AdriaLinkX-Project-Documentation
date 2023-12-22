@@ -177,16 +177,17 @@ We use SonarQube to monitor the quality of our code. Here you can find the links
 The documentation repository is structured as follows:
 
 - `documentation/`
+  - `api-spec/`
+    - [`openapi.yaml`](api-spec/openapi.yaml)
   - `business-case/`
     - [`business-case.pdf`](business-case/business-case.pdf)
-  - `c4-diagrams/`
-    - [`c4-diagrams.md`](c4-diagrams/c4-diagrams.md)
   - `code-reviews/`
     - [`code-reviews.md`](code-reviews/code-reviews.pdf)
-  - `erd/`
-    - [`erd.md`](erd/erd.md)
-  - `flowcharts/`
-    - [`flowcharts.md`](flowcharts/flowcharts.md)
+  - `schematics/`
+    - [`c4-diagrams.md`](schematics/c4-diagrams.md)
+    - [`erd.md`](schematics/erd.md)
+    - [`flowcharts.md`](schematics/flowcharts.md)
+    - [`ucd.md`](schematics/ucd.md)
   - `wireframes/`
     - [`wireframes.md`](wireframes/wireframes.md)
   - [`README.md`](README.md)
@@ -199,9 +200,10 @@ Our market is hosted on WordPress. You can find the link to our website [here](h
 
 For technical documentation, consult the following files:
 
-- Entity-Relationship Diagrams (ERDs)
 - C4 diagrams
+- Entity-Relationship Diagrams (ERDs)
 - Flowcharts
+- Use Case Diagrams (UCDs)
 
 ### Wireframes
 
@@ -214,6 +216,8 @@ For our wireframes, we have 3 different views:
 ### Business Case
 
 Refer to the [Business Case Document](https://docs.google.com/document/d/1KgKLgSN-0K7Lq6ORozE_DI7pTmq-jCV59zkQCXIQixg/edit?usp=sharing) for a detailed understanding of the project's goals and objectives.
+
+For an offline version of the business case, refer to the [folder structure](#folder-structure)
 
 ## Implemented Topics
 
