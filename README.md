@@ -229,20 +229,24 @@ Discover the talented individuals behind the project:
 
 ### **Kassam Ahmad**
 
-- *Role:* **CEO**
-- *Contribution:* [Describe contributions]
+#### CEO
+
+*Contribution:* Client-side development
 
 ### **Vanhoorne Bram**
 
-- *Role:* **COO**
-- *Contribution:* [Describe contributions]
+#### COO
+
+*Contribution:* Head of development, server-side development, database design, OpenAPI documentation, server-side testing
 
 ### **Nadeem Mohamed Sharfudden**
 
-- *Role:* **CTO**
-- *Contribution:* [Describe contributions]
+#### CTO
+
+*Contribution:* Final financial calculations, presentation financial calculations
 
 ### **Popal Ares**
 
-- *Role:* **Head of Partnerships**
-- *Contribution:* [Describe contributions]
+#### Head of Partnerships
+
+*Contribution:* Alpha business case, final presentation, client-side development
