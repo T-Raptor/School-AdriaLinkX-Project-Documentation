@@ -170,18 +170,24 @@ We use SonarQube to monitor the quality of our code. Here you can find the links
 - [Client Deshboard](https://sonarqube.ti.howest.be/dashboard?id=2023.project-2%3Aadria-client-12)
 - [Server Dashboards](https://sonarqube.ti.howest.be/dashboard?id=2023.project-2%3Aadria-server-12)
 
-## Understanding the Repositories
+## Understanding the Documentation Repository
 
 ### Folder Structure
 
-The server, client and tracker repositories are structured as follows:
+The documentation repository is structured as follows:
 
-- Server
-  - ...
-- Client
-  - ...
-- Tracker
-  - ...
+- `documentation/`
+  - `business-case/`
+    - [`business-case.pdf`](business-case/business-case.pdf)
+  - `c4-diagrams/`
+    - [`c4-diagrams.md`](c4-diagrams/c4-diagrams.md)
+  - `erd/`
+    - [`erd.md`](erd/erd.md)
+  - `flowcharts/`
+    - [`flowcharts.md`](flowcharts/flowcharts.md)
+  - `wireframes/`
+    - [`wireframes.md`](wireframes/wireframes.md)
+  - [`README.md`](README.md)
 
 ### Technical Docs
 
@@ -193,11 +199,15 @@ For technical documentation, consult the following files:
 
 ### Wireframes
 
-Review the initial design of the application through our [wireframes](link_to_wireframes).
+For our wireframes, we have 3 different views:
+
+1. How an exisiting client sees the application: [Existing Client](https://www.figma.com/proto/JcqhwcRL1Pwpy8XyHXFNI9/AD?type=design&node-id=0-1&t=DR4dgbZR0iYEakf4-0&scaling=scale-down&starting-point-node-id=391%3A1400)
+2. How a new client sees the application: [New Client](https://www.figma.com/proto/JcqhwcRL1Pwpy8XyHXFNI9/AD?type=design&node-id=0-1&t=DR4dgbZR0iYEakf4-0&scaling=scale-down&starting-point-node-id=402%3A5960)
+3. How the admin sees the application: [Admin](https://www.figma.com/proto/JcqhwcRL1Pwpy8XyHXFNI9/AD?type=design&node-id=0-1&t=DR4dgbZR0iYEakf4-0&scaling=scale-down&starting-point-node-id=391%3A1419)
 
 ### Business Case
 
-Refer to the [Business Case Document](#) for a detailed understanding of the project's goals and objectives.
+Refer to the [Business Case Document](https://docs.google.com/document/d/1KgKLgSN-0K7Lq6ORozE_DI7pTmq-jCV59zkQCXIQixg/edit?usp=sharing) for a detailed understanding of the project's goals and objectives.
 
 ## Implemented Topics
 
