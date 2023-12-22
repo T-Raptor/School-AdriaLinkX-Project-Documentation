@@ -241,22 +241,22 @@ Discover the talented individuals behind the project:
 
 #### CEO
 
-*Contribution:* Client-side development
+*Contribution:* Client-side development, Map technology research, Map API integration
 
 ### **Vanhoorne Bram**
 
 #### COO
 
-*Contribution:* Head of development, server-side development, database design, OpenAPI documentation, server-side testing
+*Contribution:* Head of development, Server-side development, Database design, OpenAPI documentation, Server-side testing, Map technology research
 
 ### **Nadeem Mohamed Sharfudden**
 
 #### CTO
 
-*Contribution:* Final financial calculations, presentation financial calculations
+*Contribution:* Final financial calculations, Presentation financial calculations
 
 ### **Popal Ares**
 
 #### Head of Partnerships
 
-*Contribution:* Alpha business case, final presentation, client-side development
+*Contribution:* Alpha business case, Final presentation, client-side development
