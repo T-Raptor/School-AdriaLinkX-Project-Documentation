@@ -181,6 +181,8 @@ The documentation repository is structured as follows:
     - [`business-case.pdf`](business-case/business-case.pdf)
   - `c4-diagrams/`
     - [`c4-diagrams.md`](c4-diagrams/c4-diagrams.md)
+  - `code-reviews/`
+    - [`code-reviews.md`](code-reviews/code-reviews.pdf)
   - `erd/`
     - [`erd.md`](erd/erd.md)
   - `flowcharts/`
