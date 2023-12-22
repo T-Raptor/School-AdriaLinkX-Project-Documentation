@@ -170,7 +170,7 @@ We use SonarQube to monitor the quality of our code. Here you can find the links
 - [Client Deshboard](https://sonarqube.ti.howest.be/dashboard?id=2023.project-2%3Aadria-client-12)
 - [Server Dashboards](https://sonarqube.ti.howest.be/dashboard?id=2023.project-2%3Aadria-server-12)
 
-## Understanding the Documentation Repository
+## Understanding the Documentation
 
 ### Folder Structure
 
@@ -188,6 +188,10 @@ The documentation repository is structured as follows:
   - `wireframes/`
     - [`wireframes.md`](wireframes/wireframes.md)
   - [`README.md`](README.md)
+
+### Marketing Website
+
+Our market is hosted on WordPress. You can find the link to our website [here](https://adrialinkx.wordpress.com/).
 
 ### Technical Docs
 
