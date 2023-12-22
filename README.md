@@ -184,7 +184,7 @@ The documentation repository is structured as follows:
   - `schematics/`
     - [`c4-diagrams.md`](schematics/c4.png)
     - [`erd.md`](schematics/erd.png)
-    - [`flowcharts.md`](schematics/flowcharts.md)
+    - [`flowcharts.png`](schematics/flowcharts.png)
     - [`ucd.md`](schematics/ucd.md)
   - `wireframes/`
     - [`wireframes.md`](wireframes/wireframes.md)
@@ -196,8 +196,8 @@ For technical documentation, consult the following files:
 
 - [C4 diagrams](schematics/c4.png)
 - [Entity-Relationship Diagrams (ERDs)](schematics/erd.png)
-- [Flowcharts](schematics/flowcharts.md)
-- [Use Case Diagrams (UCDs)](schematics/ucd.md)
+- [Flowcharts](schematics/flowcharts.png)
+- [Use Case Diagrams (UCDs)](schematics/ucd.png)
 
 ### Wireframes
 
