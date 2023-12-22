@@ -6,7 +6,7 @@ Welcome to the documentation repository for our project, **AdriaLinkX**. This re
 
 ### Purpose and Value
 
-Our mission with this project is to provide a solution to the problem of the lack of a safe and cheap shuttle service between colonies. We aim to provide a service that is both convenient and reliable, and that can be used by anyone, regardless of their technical expertise.
+Our mission with this project is to provide a solution to the lack of safe and cheap transport between colonies. We aim to provide a service that is both convenient and reliable, and that can be used by anyone, regardless of their technical expertise.
 
 ## Using the Software
 
@@ -19,36 +19,36 @@ To run the application locally, you need the following software installed on you
   - Azul Zulu JDK 17
 
 - Client
-  - nginx (Installation instructions will be provided below)
+  - nginx (Recommended) or any other static web server
 
 - Tracker
-  - Python 3.x
+  - Python 3.X (Tested on 3.11)
 
 ### Usage
 
 #### Webpage descriptions
 
-The application comprises multiple webpages, each catering to a specific function. Here's an overview of each webpage and its features:
+The application is comprised of multiple webpages, each catering to a specific function. Here's an overview of each webpage and its features:
 
 1. **Index**
-   - The index page provides you with a dashboard of options to choose from. You can choose to monitor the shuttles, view the analytics, or view the reservations.
+   - The index page shows a dashboard with the available tools. You can choose to monitor the shuttles, view reservations or go to the analytics.
     ![Index screenshot](webapp-screenshots/index.png)
 
 2. **Reserve**
-   - The reserve page allows you to reserve tracks. You can choose the date, time, and destination of your trip.
+   - The reserve page allows you to reserve tracks. Here you can choose the date, time, and route you wish to reserve.
     ![Reserve screenshot](webapp-screenshots/reserve.png)
     *Note: In the screenshot a track, date and timeframe are selected just for demonstration purposes.*
 
 3. **Reservation**
-   - The reservation page allows you to reserve tracks. You can choose the date, time, and destination of your trip.
+   - The reservation page allows you to review & place new reservations.
     ![Reservation screenshot](webapp-screenshots/reservations.png)
 
 4. **Shuttle Monitor**
-   - The shuttle monitor page allows you to view the current location of all shuttles. You can view shuttle's current route and track's current status or using the history bar you can view older shuttles and tracks statuses.
+   - The monitoring page gives you a view of the location of each shuttle. On this page you can also inspect any ongoing disturbances and can even use the timeline at the top to go back in time.
     ![Monitor screenshot](webapp-screenshots/monitor.png)
 
 5. **Analytics**
-   - The analytics page allows you to view the analytics of the system. You can view the number of reservations per month and the number of incidents per month.
+   - The analytics page allows you to look at the data collected by the system. This data includes reservations and warnings grouped by month, but also has a map showing which tracks are more commonly reserved.
     ![Analytics screenshot](webapp-screenshots/analytics.png)
 
 ## Getting Started
@@ -111,7 +111,7 @@ The client is a static website, so you can run it using any web server. We recom
    }
    ```
 
-After pulling the repository the steps differ depending on your operating system:
+The steps below may differ depending on your operating system:
 
 1. Install nginx if not yet installed:
    - Ubuntu/Debian: `sudo apt install nginx`
@@ -124,7 +124,7 @@ After pulling the repository the steps differ depending on your operating system
        server {
            listen 80 default_server;
 
-           root /home/[YOUR_USERNAME]/client;
+           root <Project directory>/src;
            index index.html index.htm;
 
            server_name localhost;
@@ -134,6 +134,7 @@ After pulling the repository the steps differ depending on your operating system
            }
        }
        ```
+    - Replace `<Project directory>` with the path to the project that you just cloned.
 
 3. Start nginx:
 
@@ -148,7 +149,7 @@ After pulling the repository the steps differ depending on your operating system
 
 - Pull the tracker repository into a folder of your choice: `git clone https://gitlab.ti.howest.be/ti/2023-2024/s3/analysis-and-development-project/projects/group-12/tracker.git`
 
-Set up and run the tracker (shuttle & notice simulator) locally by following these steps:
+Set up and run the tracker (shuttle & warning simulator) locally by following these steps:
 
 1. Open a terminal in the project directory
 2. Create a virtual environment: `python3 -m venv venv`
@@ -182,12 +183,10 @@ The documentation repository is structured as follows:
   - `user-tests/`
     - [`user-tests.docx`](user-tests/user-tests.docx)
   - `schematics/`
-    - [`c4-diagrams.md`](schematics/c4.png)
-    - [`erd.md`](schematics/erd.png)
+    - [`c4.png`](schematics/c4.png)
+    - [`erd.png`](schematics/erd.png)
     - [`flowcharts.png`](schematics/flowcharts.png)
-    - [`ucd.md`](schematics/ucd.png)
-  - `wireframes/`
-    - [`wireframes.md`](wireframes/wireframes.md)
+    - [`ucd.png`](schematics/ucd.png)
   - [`README.md`](README.md)
 
 ### Technical Docs
@@ -201,7 +200,7 @@ For technical documentation, consult the following files:
 
 ### Wireframes
 
-For our wireframes, we have 3 different views:
+For our wireframe, we have 3 different flows:
 
 1. How an exisiting client sees the application: [Existing Client](https://www.figma.com/proto/JcqhwcRL1Pwpy8XyHXFNI9/AD?type=design&node-id=0-1&t=DR4dgbZR0iYEakf4-0&scaling=scale-down&starting-point-node-id=391%3A1400)
 2. How a new client sees the application: [New Client](https://www.figma.com/proto/JcqhwcRL1Pwpy8XyHXFNI9/AD?type=design&node-id=0-1&t=DR4dgbZR0iYEakf4-0&scaling=scale-down&starting-point-node-id=402%3A5960)
@@ -237,15 +236,15 @@ During the development of this application, we covered the following self-study 
 
 ### Marketing Website
 
-Our market is hosted on WordPress. You can find the link to our website [here](https://adrialinkx.wordpress.com/).
+Our marketing website is hosted on WordPress. You can find the link to our website [here](https://adrialinkx.wordpress.com/).
 
 ### User Tests
 
-As required, we have conducted user tests. You can find the results of these tests [here](user-tests/user-tests.docx).
+As required, we have conducted several user tests. You can find the results of these tests [here](user-tests/user-tests.docx).
 
-### Flow tests
+### Flow demonstrations
 
-Additionally, we have conducted flow tests for 3 different flows:
+Additionally, we have conducted demonstrations for 3 different flows:
 
 1. [I am a new client and I want to reserve a track.](flow-tests/new_client.mp4)
 2. [I am an existing client and want to view my reservations.](flow-tests/client.mp4)
