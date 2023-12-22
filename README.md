@@ -239,7 +239,9 @@ During the development of this application, we covered the following self-study 
 
 Our market is hosted on WordPress. You can find the link to our website [here](https://adrialinkx.wordpress.com/).
 
+### User Tests
 
+As required, we have conducted user tests. You can find the results of these tests [here](user-tests/user-tests.docx).
 
 ## Meet the Team
 
