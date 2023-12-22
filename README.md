@@ -178,8 +178,6 @@ The documentation repository is structured as follows:
 - `documentation/`
   - `api-spec/`
     - [`openapi.yaml`](api-spec/openapi.yaml)
-  - `business-case/`
-    - [`business-case.pdf`](business-case/business-case.pdf)
   - `user-tests/`
     - [`user-tests.docx`](user-tests/user-tests.docx)
   - `schematics/`
