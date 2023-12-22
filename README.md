@@ -229,7 +229,7 @@ Integration of class-taught topics into our project includes:
 During the development of this application, we covered the following self-study topics:
 
 - Use of higher order functions on the server:
-  - 
+  - matchAny, filter, allMatch, map
 
 - Push notifications (Notification API):
   - Push notifications are used to notify the client when an incident occurs.
