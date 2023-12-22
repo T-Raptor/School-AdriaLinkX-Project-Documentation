@@ -227,18 +227,22 @@ Integration of class-taught topics into our project includes:
 
 Discover the talented individuals behind the project:
 
-- **Bram**
-  - *Role:* [Role]
-  - *Contribution:* [Describe contributions]
+### **Kassam Ahmad**
 
-- **Ahmad**
-  - *Role:* [Role]
-  - *Contribution:* [Describe contributions]
+- *Role:* **CEO**
+- *Contribution:* [Describe contributions]
 
-- **Mohamed**
-  - *Role:* [Role]
-  - *Contribution:* [Describe contributions]
+### **Vanhoorne Bram**
 
-- **Ares**
-  - *Role:* [Role]
-  - *Contribution:* [Describe contributions]
+- *Role:* **COO**
+- *Contribution:* [Describe contributions]
+
+### **Nadeem Mohamed Sharfudden**
+
+- *Role:* **CTO**
+- *Contribution:* [Describe contributions]
+
+### **Popal Ares**
+
+- *Role:* **Head of Partnerships**
+- *Contribution:* [Describe contributions]
