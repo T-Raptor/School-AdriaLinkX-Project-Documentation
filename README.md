@@ -181,8 +181,8 @@ The documentation repository is structured as follows:
     - [`openapi.yaml`](api-spec/openapi.yaml)
   - `business-case/`
     - [`business-case.pdf`](business-case/business-case.pdf)
-  - `code-reviews/`
-    - [`code-reviews.md`](code-reviews/code-reviews.pdf)
+  - `user-tests/`
+    - [`user-tests.docx`](user-tests/user-tests.docx)
   - `schematics/`
     - [`c4-diagrams.md`](schematics/c4-diagrams.md)
     - [`erd.md`](schematics/erd.md)
@@ -192,18 +192,14 @@ The documentation repository is structured as follows:
     - [`wireframes.md`](wireframes/wireframes.md)
   - [`README.md`](README.md)
 
-### Marketing Website
-
-Our market is hosted on WordPress. You can find the link to our website [here](https://adrialinkx.wordpress.com/).
-
 ### Technical Docs
 
 For technical documentation, consult the following files:
 
-- C4 diagrams
-- Entity-Relationship Diagrams (ERDs)
-- Flowcharts
-- Use Case Diagrams (UCDs)
+- [C4 diagrams](schematics/c4-diagrams.md)
+- [Entity-Relationship Diagrams (ERDs)](schematics/erd.md)
+- [Flowcharts](schematics/flowcharts.md)
+- [Use Case Diagrams (UCDs)](schematics/ucd.md)
 
 ### Wireframes
 
@@ -238,6 +234,14 @@ During the development of this application, we covered the following self-study 
 - Push notifications (Notification API):
   - Push notifications are used to notify the client when an incident occurs.
     For example, when a track is blocked, the client will receive a notification.
+
+## Additional Information
+
+### Marketing Website
+
+Our market is hosted on WordPress. You can find the link to our website [here](https://adrialinkx.wordpress.com/).
+
+
 
 ## Meet the Team
 
