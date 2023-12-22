@@ -185,7 +185,7 @@ The documentation repository is structured as follows:
     - [`c4-diagrams.md`](schematics/c4.png)
     - [`erd.md`](schematics/erd.png)
     - [`flowcharts.png`](schematics/flowcharts.png)
-    - [`ucd.md`](schematics/ucd.md)
+    - [`ucd.md`](schematics/ucd.png)
   - `wireframes/`
     - [`wireframes.md`](wireframes/wireframes.md)
   - [`README.md`](README.md)
