@@ -184,7 +184,7 @@ The documentation repository is structured as follows:
   - `user-tests/`
     - [`user-tests.docx`](user-tests/user-tests.docx)
   - `schematics/`
-    - [`c4-diagrams.md`](schematics/c4-diagrams.md)
+    - [`c4-diagrams.md`](schematics/c4.png)
     - [`erd.md`](schematics/erd.md)
     - [`flowcharts.md`](schematics/flowcharts.md)
     - [`ucd.md`](schematics/ucd.md)
@@ -196,7 +196,7 @@ The documentation repository is structured as follows:
 
 For technical documentation, consult the following files:
 
-- [C4 diagrams](schematics/c4-diagrams.md)
+- [C4 diagrams](schematics/c4.png)
 - [Entity-Relationship Diagrams (ERDs)](schematics/erd.md)
 - [Flowcharts](schematics/flowcharts.md)
 - [Use Case Diagrams (UCDs)](schematics/ucd.md)
