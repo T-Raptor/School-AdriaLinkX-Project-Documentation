@@ -8,6 +8,13 @@ Welcome to the documentation repository for our project, **AdriaLinkX**. This re
 
 Our mission with this project is to provide a solution to the lack of safe and cheap transport between colonies. We aim to provide a service that is both convenient and reliable, and that can be used by anyone, regardless of their technical expertise.
 
+## Code Repositories
+The AdriaLinkX project consists of three main components, each with its own repository:
+
+- [Client: Project's nginx client](https://github.com/T-Raptor/School-AdriaLinkX-Project-Client)
+- [Server: Project's Java server backend](https://github.com/T-Raptor/School-AdriaLinkX-Project-Server)
+- [Tracker: Project's data populator](https://github.com/T-Raptor/School-AdriaLinkX-Project-Tracker)
+
 ## Using the Software
 
 ### Prerequisites
